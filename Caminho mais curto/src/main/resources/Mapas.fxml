@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="928.0" style="-fx-background-color: ´;" styleClass="root" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.MapaController">
+   <children>
+      <AnchorPane fx:id="defDialog" layoutX="58.0" layoutY="136.0" prefHeight="217.0" prefWidth="267.0" style="-fx-background-radius: 200;" styleClass="settingsDialog" stylesheets="@styles.css">
+         <effect>
+            <DropShadow color="#00000025" height="35.83" radius="20.38" width="47.69" />
+         </effect>
+         <children>
+            <ImageView layoutX="100.0" layoutY="12.0">
+               <image>
+                  <Image url="@Mapa.png" />
+               </image>
+            </ImageView>
+            <Circle fx:id="currentMap" fill="#e05d5d" layoutX="134.0" layoutY="108.0" radius="57.0" stroke="#ffffff00" strokeType="INSIDE">
+               <effect>
+                  <DropShadow color="#00000050" height="43.75" offsetX="-3.0" offsetY="6.0" radius="21.557499999999997" width="44.48">
+                     <input>
+                        <Lighting diffuseConstant="1.93" specularConstant="0.39" surfaceScale="1.62">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </input>
+                  </DropShadow>
+               </effect>
+            </Circle>
+            <ImageView fx:id="next" layoutX="191.0" layoutY="101.0" styleClass="btn">
+               <image>
+                  <Image url="@arrow.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="before" layoutX="62.0" layoutY="101.0" styleClass="btn">
+               <image>
+                  <Image url="@arrow%201.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView layoutX="91.0" layoutY="169.0" onMouseClicked="#apply" styleClass="btn">
+               <image>
+                  <Image url="@aplicar.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="costDialog" layoutX="58.0" layoutY="138.0" prefHeight="263.0" prefWidth="267.0" style="-fx-background-radius: 40;" styleClass="costDialog1" stylesheets="@styles.css">
+         <effect>
+            <DropShadow color="#00000025" height="35.83" radius="20.38" width="47.69" />
+         </effect>
+         <children>
+            <AnchorPane prefHeight="263.0" prefWidth="267.0" style="-fx-background-radius: 40;" styleClass="costDialog" stylesheets="@styles.css">
+               <effect>
+                  <DropShadow color="#00000025" height="41.76" radius="21.862499999999997" width="47.69" />
+               </effect>
+            </AnchorPane>
+            <ImageView layoutX="120.0" layoutY="221.0" onMouseClicked="#backClicked" styleClass="btn">
+               <image>
+                  <Image url="@back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView layoutX="42.0" layoutY="22.0">
+               <image>
+                  <Image url="@custoAdds.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pathField" alignment="CENTER" contentDisplay="CENTER" layoutX="83.0" layoutY="66.0" prefHeight="29.0" prefWidth="103.0" text="1 2 3 4 5" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Rockwell Condensed" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="distanceField" alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="157.0" prefHeight="29.0" prefWidth="103.0" text="15km" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Rockwell Condensed" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="timeField" alignment="CENTER" contentDisplay="CENTER" layoutX="135.0" layoutY="157.0" prefHeight="29.0" prefWidth="103.0" text="15min" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Rockwell Condensed" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="dialog" layoutX="365.0" layoutY="443.0" onMouseClicked="#closeDialog" prefHeight="44.0" prefWidth="225.0" style="-fx-background-radius: 9; -fx-background-color: ffd394;">
+         <effect>
+            <DropShadow color="#00000025" height="65.46" radius="27.787499999999998" spread="0.48" width="47.69" />
+         </effect>
+         <children>
+            <Label fx:id="cost" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="8.0" prefHeight="29.0" prefWidth="103.0" text="Ponto: 1" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="8.0">
+               <font>
+                  <Font name="Rockwell Condensed" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="root" layoutX="340.0" layoutY="65.0" prefHeight="358.0" prefWidth="275.0" style="-fx-background-radius: 30; -fx-background-color: white;" stylesheets="@styles.css">
+         <effect>
+            <DropShadow color="#00000043" height="1.0" offsetX="-5.0" offsetY="5.0" radius="0.0" spread="1.0" width="0.0">
+               <input>
+                  <DropShadow color="#0000004b" height="71.53" offsetX="-10.0" offsetY="10.0" radius="35.1725" width="71.16" />
+               </input>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView layoutX="26.0" layoutY="14.0" onMouseClicked="#back">
+               <image>
+                  <Image url="@icons8_switch_on_32px.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView layoutX="99.0" layoutY="59.0">
+               <image>
+                  <Image url="@Caminho%20+%20curto.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="47.0" layoutY="122.0" prefHeight="114.0" prefWidth="183.0" style="-fx-background-radius: 9; -fx-background-color: white;">
+               <effect>
+                  <DropShadow color="#00000025" height="23.97" radius="17.415" width="47.69" />
+               </effect>
+               <children>
+                  <AnchorPane id="mapas" fx:id="mapas" layoutX="6.0" layoutY="7.0" prefHeight="101.0" prefWidth="172.0" stylesheets="@styles.css" />
+                  <ImageView fx:id="partida" fitHeight="24.0" fitWidth="24.0" styleClass="btn">
+                     <image>
+                        <Image url="@icons8_marker_40px_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="chegada" fitHeight="24.0" fitWidth="24.0" styleClass="btn">
+                     <image>
+                        <Image url="@icons8_marker_40px_2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView layoutX="75.0" layoutY="255.0" onMouseClicked="#generateMap" styleClass="btn">
+               <image>
+                  <Image url="@gerar%20mapa.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView layoutX="42.0" layoutY="300.0" onMouseClicked="#findPath" styleClass="btn">
+               <image>
+                  <Image url="@encontrar.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView layoutX="230.0" layoutY="18.0" onMouseClicked="#close" styleClass="btn">
+               <image>
+                  <Image url="@icons8_delete_24px_1.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="def" layoutX="63.0" layoutY="18.0" onMouseClicked="#defClicked">
+               <image>
+                  <Image url="@icons8_settings_24px_1.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children></AnchorPane>
+      <AnchorPane fx:id="findPathDialog" layoutX="629.0" layoutY="120.0" prefHeight="250.0" prefWidth="241.0" style="-fx-background-radius: 40;" styleClass="dialogFindPath" stylesheets="@styles.css">
+         <effect>
+            <DropShadow color="#00000025" height="35.83" radius="20.38" width="47.69" />
+         </effect>
+         <children>
+            <ImageView layoutX="99.0" layoutY="192.0" onMouseClicked="#go">
+               <image>
+                  <Image url="@go.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <AnchorPane layoutX="39.0" layoutY="30.0" prefHeight="114.0" prefWidth="164.0" style="-fx-background-color: white; -fx-background-radius: 40;">
+               <children>
+                  <TextField fx:id="start" layoutX="43.0" layoutY="27.0" prefHeight="26.0" prefWidth="78.0" promptText="Start" />
+                  <TextField fx:id="end" layoutX="43.0" layoutY="62.0" prefHeight="26.0" prefWidth="78.0" promptText="End" />
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="14.0" layoutY="28.0">
+                     <image>
+                        <Image url="@icons8_marker_40px_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="121.0" layoutY="63.0">
+                     <image>
+                        <Image url="@icons8_marker_40px_2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="fire" fitHeight="114.0" fitWidth="114.0" layoutX="421.0" layoutY="404.0" rotate="180.0">
+         <image>
+            <Image url="@fire%20gif.gif" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="invalidPathDialog" layoutX="53.0" layoutY="39.0" prefHeight="271.0" prefWidth="278.0">
+         <children>
+            <AnchorPane layoutX="3.0" layoutY="25.0" prefHeight="157.0" prefWidth="275.0" style="-fx-background-radius: 30; -fx-background-color: white;" stylesheets="@styles.css">
+               <effect>
+                  <DropShadow color="#00000043" height="1.0" offsetX="-5.0" offsetY="5.0" radius="0.0" spread="1.0" width="0.0">
+                     <input>
+                        <DropShadow color="#0000004b" height="74.13" offsetX="-10.0" offsetY="10.0" radius="35.8225" width="71.16" />
+                     </input>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <Label fx:id="title" layoutX="30.0" layoutY="14.0" text="Caminho inválido">
+                     <font>
+                        <Font name="Rockwell" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="details" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="54.0" prefHeight="67.0" prefWidth="246.0" text="Inseriste um caminho inválido, tenta outra vez!" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Rockwell" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView layoutX="118.0" layoutY="110.0" onMouseClicked="#okClicked" styleClass="btn">
+                     <image>
+                        <Image url="@okButton.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="fire1" fitHeight="114.0" fitWidth="114.0" layoutX="76.0" layoutY="166.0" rotate="180.0">
+               <image>
+                  <Image url="@fire%20gif.gif" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

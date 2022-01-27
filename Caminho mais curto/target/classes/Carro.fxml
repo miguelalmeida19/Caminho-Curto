@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Polygon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="928.0" styleClass="root" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.CarroController">
+   <children>
+      <AnchorPane fx:id="root" layoutX="256.0" layoutY="61.0" prefHeight="275.0" prefWidth="358.0" style="-fx-background-radius: 30;" stylesheets="@styles.css">
+         <effect>
+            <DropShadow color="#00000043" height="1.0" offsetX="-5.0" offsetY="5.0" radius="0.0" spread="1.0" width="0.0">
+               <input>
+                  <DropShadow color="#0000004b" height="74.13" offsetX="-10.0" offsetY="10.0" radius="35.8225" width="71.16" />
+               </input>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView fitHeight="358.0" fitWidth="417.0" layoutY="23.0" preserveRatio="true">
+               <image>
+                  <Image url="@Carrinha.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="pneudaFrente" fitHeight="56.0" fitWidth="57.0" layoutX="286.0" layoutY="213.0" preserveRatio="true">
+               <image>
+                  <Image url="@Pneu%20da%20frente.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="pneuDetras" fitHeight="56.0" fitWidth="57.0" layoutX="76.0" layoutY="215.0" preserveRatio="true">
+               <image>
+                  <Image url="@Pneu%20de%20trás.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="helice" fitHeight="114.0" fitWidth="114.0" layoutX="152.0" layoutY="217.0" rotate="180.0">
+               <image>
+                  <Image url="@fire%20gif.gif" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <ImageView fx:id="fire" fitHeight="114.0" fitWidth="114.0" layoutX="179.0" layoutY="233.0" rotate="-90.0">
+         <image>
+            <Image url="@fire%20gif.gif" />
+         </image>
+      </ImageView>
+      <Polygon fx:id="lights" layoutX="697.0" layoutY="78.0" points="-82.58876037597656, 210.51234436035156, 239.1907958984375, 245.2873077392578, 0.0, -60.0" rotate="-90.0" stroke="TRANSPARENT" strokeType="INSIDE">
+         <effect>
+            <GaussianBlur radius="63.0" />
+         </effect>
+         <fill>
+            <LinearGradient endX="0.819047619047619" endY="0.16190476190476188">
+               <stops>
+                  <Stop color="#ff99004a" />
+                  <Stop color="#ffffff00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Polygon>
+   </children>
+</AnchorPane>

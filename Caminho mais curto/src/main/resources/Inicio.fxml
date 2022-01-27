@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="928.0" styleClass="root" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.InicioController">
+   <children>
+      <AnchorPane fx:id="root" layoutX="340.0" layoutY="65.0" prefHeight="358.0" prefWidth="275.0" style="-fx-background-radius: 30; -fx-background-color: white;" stylesheets="@styles.css">
+         <effect>
+            <DropShadow color="#00000043" height="1.0" offsetX="-5.0" offsetY="5.0" radius="0.0" spread="1.0" width="0.0">
+               <input>
+                  <DropShadow color="#0000004b" height="74.13" offsetX="-10.0" offsetY="10.0" radius="35.8225" width="71.16" />
+               </input>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView layoutX="99.0" layoutY="59.0">
+               <image>
+                  <Image url="@Caminho%20+%20curto.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="start" layoutX="99.0" layoutY="165.0" onMouseClicked="#start" preserveRatio="true" styleClass="btn">
+               <image>
+                  <Image url="@Botão.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView layoutX="26.0" layoutY="14.0" onMouseClicked="#start">
+               <image>
+                  <Image url="@sdsqdq.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView layoutX="230.0" layoutY="18.0" onMouseClicked="#close" styleClass="btn">
+               <image>
+                  <Image url="@icons8_delete_24px_1.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children></AnchorPane>
+      <ImageView fx:id="fire" fitHeight="114.0" fitWidth="114.0" layoutX="421.0" layoutY="404.0" rotate="180.0">
+         <image>
+            <Image url="@fire%20gif.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

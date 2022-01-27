@@ -1,0 +1,26 @@
+.btn:hover {
+    -fx-opacity: 0.70;
+    -fx-scale-y: 1.1;
+    -fx-scale-x: 1.1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.0), 5.43, 0.27, -1.0, 3.0);
+}
+
+.root {
+    -fx-background-color: transparent;
+}
+
+.dialogFindPath{
+    -fx-background-radius: 9;
+    -fx-background-color: linear-gradient(#8ec1c5, #eaeef4);
+}
+
+.costDialog{
+    -fx-background-radius: 9;
+    -fx-background-color: linear-gradient(#80ED99, #57CC99);
+    -fx-opacity: 0.4;
+}
+
+.settingsDialog{
+    -fx-background-radius: 9;
+    -fx-background-color: linear-gradient(#FFADAD, #FFDAC7);
+}
